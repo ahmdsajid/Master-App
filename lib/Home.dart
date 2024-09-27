@@ -1,113 +1,140 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color(0xff4b5320),
-        title: Text(
-          'AppHub',
+        title: const Text(
+          "AppHub",
           style: TextStyle(
-            fontWeight: FontWeight.bold,
             color: Colors.white,
             fontSize: 30,
           ),
         ),
-      
       ),
-      body: Container(
-        color: Color(0xff1d1c1b),
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            
-            Text(
-              'Welcome, User!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Explore your features:',
-              style: TextStyle(
-                color: Colors.grey[400],
-                fontSize: 18,
-              ),
-            ),
-            SizedBox(height: 20),
 
-
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  buildFeatureCard(
-                    context,
-                    icon: Icons.bar_chart,
-                    label: 'BMI Calculator',
-                    onTap: () {},
-                  ),
-                  buildFeatureCard(
-                    context,
-                    icon: Icons.person,
-                    label: 'Profile',
-                    onTap: () {},
-                  ),
-                  buildFeatureCard(
-                    context,
-                    icon: Icons.dashboard,
-                    label: 'Dashboard',
-                    onTap: () {},
-                  ),
-                  buildFeatureCard(
-                    context,
-                    icon: Icons.card_membership,
-                    label: 'Visiting Card',
-                    onTap: () {},
+                  Text(
+                    "Welcome back!  User",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildFeatureCard(BuildContext context,
-      {required IconData icon, required String label, required VoidCallback onTap}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          color: Color(0xff2b3728),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              size: 50,
-              color: Color(0xffd1f42b),
-            ),
-            SizedBox(height: 10),
-            Text(
-              label,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Explore Your Feature :",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                  ),
+                ],
               ),
-            ),
-          ],
+              SizedBox(
+                height: 20,
+              ),
+              Image(
+                  image: NetworkImage(
+                      "https://img.freepik.com/free-vector/telecommuting-concept-illustration_52683-36163.jpg?t=st=1725954197~exp=1725957797~hmac=956c2a0d0b4b136d675a42d888edfe736c286dd7fd243dcea3fee400632ab7f6&w=740")),
+              SizedBox(
+                height: 20,
+              ),
+              Expanded(
+                  child: Row(
+                children: [
+                  Expanded(
+                      child: Container(
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: IconButton(onPressed: () {},
+                          icon: Icon(Icons.person,
+                          size: 30,
+                          color: Colors.orange,
+                          )),
+                        )
+                      ],
+                    ),
+                  )),
+                ],
+              )),
+              Expanded(
+                  child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: Colors.blueGrey,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.calculate,
+                                size: 30,
+                                color: Colors.orange,
+                                )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )),
+              Expanded(
+                  child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: Colors.blueGrey,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.pie_chart,
+                                size: 30,
+                                color: Colors.orange,
+                                )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )),
+            ],
+          ),
         ),
       ),
     );

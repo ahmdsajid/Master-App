@@ -1,6 +1,7 @@
 import 'package:demo_app/BMI_Calculator/bmi.dart';
 import 'package:demo_app/BMI_Calculator/result.dart';
 import 'package:demo_app/Home.dart';
+import 'package:demo_app/Onboard/Bottomnavigation.dart';
 import 'package:demo_app/Profile/profile.dart';
 import 'package:demo_app/loginpage.dart';
 import 'package:flutter/material.dart';

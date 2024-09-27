@@ -12,7 +12,7 @@ class Bottomnavigation extends StatefulWidget {
 }
 
 class _BottomnavigationState extends State<Bottomnavigation> {
-  List<Widget> pages = [ HomePage(), profilepage(), bmiclculate(), Resultpage()];
+  List<Widget> pages = [ Home(), profilepage(), bmiclculate(), Resultpage()];
   int index = 0;
 
   @override
@@ -20,31 +20,38 @@ class _BottomnavigationState extends State<Bottomnavigation> {
     return Scaffold(
       body: pages[index],
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.deepPurple,
         currentIndex: index,
         onTap: (value) {
           setState(() {
             index = value;
           });
         },
-
-        items: const[
+        backgroundColor: Colors.white,
+      
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            backgroundColor: Colors.blue,
+            icon: Icon(Icons.home,size: 30,),
+            //backgroundColor: Colors.blue,
             label: "Home",
           ),
-
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline),
-          backgroundColor: Colors.indigo,
+      
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline,size: 30,),
+          //backgroundColor: Colors.indigo,
           label: "Profile"
           ),
-
+      
           BottomNavigationBarItem(
-            icon: Icon(Icons.calculate_outlined),
-            backgroundColor: Colors.green,
+            icon: Icon(Icons.calculate_outlined,size: 30,),
+            //backgroundColor: Colors.green,
             label: "BMI Calculator"
           ),
-
+      
+          // BottomNavigationBarItem(icon: Icon(Icons.receipt),
+          // backgroundColor: Colors.yellow,
+          // label: "result"
+          // )
+      
         ]
         ),
     );
